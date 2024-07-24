@@ -1,0 +1,28 @@
+---
+import { PROFILE, SITE } from "@/config";
+
+const ASTRO_URL = "https://astro.build/";
+---
+
+<footer class="container flex flex-col gap-6 py-8">
+  <div class="text-balance text-sm text-muted-foreground">
+    <span>© {SITE.year} Nico Dinata.</span>
+    <span class="ml-1"
+      >Built with <a href={ASTRO_URL} target="_blank" rel="noopener noreferrer"
+        >Astro</a
+      > and ❤️.</span
+    >
+  </div>
+
+  <div
+    class="flex items-center gap-8 text-lg text-foreground underline decoration-primary/50 decoration-2 underline-offset-4"
+  >
+    <a href={`mailto:${PROFILE.email}`}>email</a>
+    <a href={PROFILE.linkedin.url} target="_blank" rel="noopener noreferrer"
+      >linkedin</a
+    >
+    <a href={PROFILE.github.url} target="_blank" rel="noopener noreferrer"
+      >github</a
+    >
+  </div>
+</footer>
