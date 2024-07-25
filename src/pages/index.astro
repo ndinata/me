@@ -5,7 +5,8 @@ import {
   IconBrandGithub,
 } from "@tabler/icons-react";
 
-import { PROFILE } from "@/config";
+import PastWorkItem from "@/components/past-work-item.astro";
+import { PROFILE, PAST_APPLICKABLE_WORK } from "@/config";
 import RootLayout from "@/layouts/root.astro";
 
 const BIO = "I build purposeful and user-friendly mobile and web experiences.";
@@ -30,7 +31,8 @@ const LINKS = [
 ---
 
 <RootLayout title="Nico Dinata">
-  <section class="container flex flex-col gap-10 pb-8 pt-6">
+  {/* Hero section. */}
+  <section class="container flex flex-col gap-8 pb-12 pt-8">
     <h1
       class="font-serif text-4xl font-semibold italic leading-tight text-primary"
     >
@@ -50,7 +52,7 @@ const LINKS = [
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex font-medium underline decoration-2 underline-offset-4"
+              class="inline-flex items-center font-medium underline decoration-2 underline-offset-4"
             >
               <link.Icon className="mr-2" />
               {link.value}
@@ -61,11 +63,52 @@ const LINKS = [
     </div>
   </section>
 
-  <section class="container py-10">
-    <a href="#past-work" id="past-work">
-      <h2 class="mb-4 inline font-serif text-3xl font-semibold tracking-tight">
-        past work (todo)
-      </h2>
-    </a>
+  {/* Past work section. */}
+  <section class="container flex flex-col gap-9 py-12">
+    <div class="flex flex-col gap-3">
+      <span>
+        <a href="#past-work">
+          <h2
+            id="past-work"
+            class="mb-4 inline font-serif text-3xl font-semibold tracking-tight"
+          >
+            past work
+          </h2>
+        </a>
+      </span>
+      <p class="leading-normal text-foreground/80">
+        These are some of the projects I worked on in my previous role (note:
+        their contents are confidential). Feel free to <a
+          href={`mailto:${PROFILE.email}`}
+          class="font-medium text-foreground underline decoration-2 underline-offset-4"
+          >contact me</a
+        > directly to discuss, although I may be able to share only my role and general
+        responsibilities.
+      </p>
+    </div>
+
+    {
+      Object.values(PAST_APPLICKABLE_WORK).map((work) => (
+        <PastWorkItem {...work} />
+      ))
+    }
+
+    <p class="font-serif text-xl">...and others.</p>
+  </section>
+
+  {/* Side project section. */}
+  <section class="container flex flex-col gap-9 py-12">
+    <span>
+      <a href="#side-projects">
+        <h2
+          id="side-projects"
+          class="mb-4 inline font-serif text-3xl font-semibold tracking-tight"
+        >
+          side projects
+        </h2>
+      </a>
+    </span>
+
+    <p>🚧 todo.</p>
   </section>
 </RootLayout>

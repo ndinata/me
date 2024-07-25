@@ -1,0 +1,29 @@
+---
+import { IconArrowUpRight } from "@tabler/icons-react";
+
+import { type Work } from "@/config";
+
+type Props = Work;
+
+const { name, summary, externalUrl } = Astro.props;
+---
+
+<div class="flex flex-col gap-1.5">
+  {
+    externalUrl ? (
+      <span>
+        <a
+          href={externalUrl}
+          class="inline-flex items-center font-serif text-xl underline decoration-2 underline-offset-4"
+        >
+          {name}
+          <IconArrowUpRight size={20} className="ml-1 text-foreground/80" />
+        </a>
+      </span>
+    ) : (
+      <h4 class="font-serif text-xl">{name}</h4>
+    )
+  }
+
+  <p class="text-sm text-muted-foreground">{summary}</p>
+</div>

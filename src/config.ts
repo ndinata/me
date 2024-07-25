@@ -12,3 +12,57 @@ export const PROFILE = {
 export const SITE = {
   year: "2024",
 } as const;
+
+export type Work = {
+  name: string;
+  summary: string;
+  externalUrl: string | undefined;
+  responsibilityType:
+    | "mobile-only"
+    | "web-only"
+    | "frontend"
+    | "backend"
+    | "mobile-full-stack"
+    | "web-full-stack"
+    | "full-stack";
+};
+
+/** All past work at Applickable. */
+export const PAST_APPLICKABLE_WORK = {
+  assemble: {
+    name: "Assemble",
+    summary: "Mobile app for centralised home/property management.",
+    externalUrl: "https://assemble.com.au/",
+    responsibilityType: "mobile-full-stack",
+  },
+  avie: {
+    name: "Avie",
+    summary: "Client scheduling platform for businesses.",
+    externalUrl: "https://www.avieapp.com/",
+    responsibilityType: "mobile-only",
+  },
+  carconnect: {
+    name: "carconnect",
+    summary: "Online car buying platform.",
+    externalUrl: "https://carconnect.com.au/",
+    responsibilityType: "mobile-only",
+  },
+  commons: {
+    name: "The Commons",
+    summary: "Premium coworking spaces and flexible offices management app.",
+    externalUrl: "https://www.thecommons.com.au/",
+    responsibilityType: "mobile-only",
+  },
+  hsp: {
+    name: "HSP",
+    summary: "Mobile app for syncing with electric ute covers.",
+    externalUrl: "https://hsputelids.com/app-sync/",
+    responsibilityType: "mobile-full-stack",
+  },
+  winecollective: {
+    name: "The Wine Collective",
+    summary: "Digital premium wine marketplace.",
+    externalUrl: "https://www.thewinecollective.com.au/",
+    responsibilityType: "mobile-full-stack",
+  },
+} as const satisfies Record<string, Work>;
