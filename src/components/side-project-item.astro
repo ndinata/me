@@ -1,4 +1,6 @@
 ---
+import { IconCode } from "@tabler/icons-react";
+
 import { type SideProject } from "@/config";
 
 type Props = SideProject;
@@ -14,7 +16,9 @@ const Name = productionUrl ? "a" : "h4";
 ---
 
 <div class="flex flex-col gap-2">
-  <span class="inline-flex items-end font-serif text-2xl font-medium">
+  <span
+    class="inline-flex items-center justify-between font-serif text-2xl font-medium md:justify-start"
+  >
     <Name
       href={productionUrl}
       target="_blank"
@@ -28,15 +32,15 @@ const Name = productionUrl ? "a" : "h4";
           href={sourceUrl}
           target="_blank"
           rel="noopener noreferrer"
-          class="ml-2 text-xl font-normal underline decoration-2 underline-offset-4"
+          class="rounded-full border border-input p-2 text-lg font-normal underline decoration-2 underline-offset-4 hover:bg-accent hover:text-accent-foreground md:ml-5"
         >
-          (source)
+          <IconCode size={20} />
         </a>
       )
     }
   </span>
 
-  <p class="text-muted-foreground md:text-lg">
+  <p class="tracking-tight text-muted-foreground md:text-lg">
     {summary}
   </p>
 
@@ -44,7 +48,7 @@ const Name = productionUrl ? "a" : "h4";
     techStack.length > 0 && (
       <div class="mt-2 flex flex-wrap gap-1 md:gap-2">
         {techStack.map((stack) => (
-          <div class="flex h-8 items-center justify-center rounded-full bg-primary/10 px-4 text-sm text-primary">
+          <div class="flex h-8 items-center justify-center rounded-full bg-primary/10 px-4 text-sm text-primary hover:bg-primary hover:text-primary-foreground">
             {stack}
           </div>
         ))}

@@ -54,7 +54,7 @@ const LINKS = [
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center font-medium underline decoration-2 underline-offset-4 md:text-lg"
+              class="inline-flex items-center font-medium underline decoration-2 underline-offset-4 md:text-lg md:tracking-tight"
             >
               <link.Icon className="mr-1.5" />
               {link.value}
@@ -66,8 +66,8 @@ const LINKS = [
   </section>
 
   {/* Past work section. */}
-  <section class="container flex flex-col gap-12 py-12">
-    <div class="-mb-4 flex flex-col gap-4 md:-mb-0">
+  <section class="container flex flex-col gap-10 py-12">
+    <div class="flex flex-col gap-2 md:gap-4">
       <span>
         <a href="#past-work">
           <h2
@@ -78,7 +78,7 @@ const LINKS = [
           </h2>
         </a>
       </span>
-      <p class="leading-relaxed text-foreground/80 md:text-lg">
+      <p class="leading-relaxed tracking-tight text-foreground/80 md:text-lg">
         These are some of the projects I worked on in my previous role (note:
         their contents are confidential). Feel free to <a
           href={`mailto:${PROFILE.email}`}
@@ -99,8 +99,8 @@ const LINKS = [
   </section>
 
   {/* Side project section. */}
-  <section class="container flex flex-col gap-16 py-12 pb-12">
-    <span class="-mb-6">
+  <section class="container flex flex-col gap-12 py-12 pb-12">
+    <span class="-mb-4">
       <a href="#side-projects">
         <h2
           id="side-projects"
