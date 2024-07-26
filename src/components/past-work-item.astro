@@ -6,24 +6,24 @@ import { type Work } from "@/config";
 type Props = Work;
 
 const { name, summary, externalUrl } = Astro.props;
+
+const Name = externalUrl ? "a" : "h4";
 ---
 
 <div class="flex flex-col gap-1.5">
-  {
-    externalUrl ? (
-      <span>
-        <a
-          href={externalUrl}
-          class="inline-flex items-center font-serif text-xl underline decoration-2 underline-offset-4"
-        >
-          {name}
+  <span>
+    <Name
+      href={externalUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      class={`inline-flex items-center font-serif text-xl decoration-2 underline-offset-4 ${externalUrl ? "underline" : ""}`}
+      >{name}{
+        externalUrl && (
           <IconArrowUpRight size={20} className="ml-1 text-foreground/80" />
-        </a>
-      </span>
-    ) : (
-      <h4 class="font-serif text-xl">{name}</h4>
-    )
-  }
+        )
+      }</Name
+    >
+  </span>
 
   <p class="text-sm text-muted-foreground">{summary}</p>
 </div>

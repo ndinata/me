@@ -66,3 +66,27 @@ export const PAST_APPLICKABLE_WORK = {
     responsibilityType: "mobile-full-stack",
   },
 } as const satisfies Record<string, Work>;
+
+export type SideProject = {
+  name: string;
+  summary: string;
+  url: {
+    production: string | undefined;
+    source: string | undefined;
+  };
+  techStack: (string | { name: string; url: string })[];
+};
+
+/** All side projects. */
+export const SIDE_PROJECT = {
+  mantram: {
+    name: "📿 mantram",
+    summary:
+      "Mobile-friendly online library of Buddhist mantrams. Ergonomic DX and great performance—thanks to Astro, Tailwind, and Rust (for the parser)!",
+    url: {
+      production: "https://mantram.blog/",
+      source: "https://github.com/ndinata/mantram",
+    },
+    techStack: ["Astro", "ReactJS", "TailwindCSS", "Rust"],
+  },
+} as const satisfies Record<string, SideProject>;
