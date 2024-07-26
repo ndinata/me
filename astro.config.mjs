@@ -4,8 +4,7 @@ import { defineConfig } from "astro/config";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://ndinata.github.io",
-  base: "/me",
+  site: "https://nicodinata.dev",
   integrations: [
     tailwind({
       applyBaseStyles: false,
