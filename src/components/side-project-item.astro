@@ -13,8 +13,8 @@ const {
 const Name = productionUrl ? "a" : "h4";
 ---
 
-<div class="flex flex-col gap-1.5">
-  <span class="inline-flex items-end font-serif text-xl">
+<div class="flex flex-col gap-2">
+  <span class="inline-flex items-end font-serif text-2xl font-medium">
     <Name
       href={productionUrl}
       target="_blank"
@@ -28,7 +28,7 @@ const Name = productionUrl ? "a" : "h4";
           href={sourceUrl}
           target="_blank"
           rel="noopener noreferrer"
-          class="ml-2 text-base underline decoration-2 underline-offset-4"
+          class="ml-2 text-xl font-normal underline decoration-2 underline-offset-4"
         >
           (source)
         </a>
@@ -36,9 +36,19 @@ const Name = productionUrl ? "a" : "h4";
     }
   </span>
 
-  <p class="text-sm leading-relaxed text-muted-foreground">{summary}</p>
-
-  <p class="mt-2 font-serif">
-    stack: {techStack.join(", ")}
+  <p class="text-muted-foreground md:text-lg">
+    {summary}
   </p>
+
+  {
+    techStack.length > 0 && (
+      <div class="mt-2 flex flex-wrap gap-1 md:gap-2">
+        {techStack.map((stack) => (
+          <div class="flex h-8 items-center justify-center rounded-full bg-primary/10 px-4 text-sm text-primary">
+            {stack}
+          </div>
+        ))}
+      </div>
+    )
+  }
 </div>

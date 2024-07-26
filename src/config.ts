@@ -82,11 +82,11 @@ export const SIDE_PROJECT = {
   mantram: {
     name: "📿 mantram",
     summary:
-      "Mobile-friendly online library of Buddhist mantrams. Ergonomic DX and great performance—thanks to Astro, Tailwind, and Rust (for the parser)!",
+      "Mobile-friendly online library of Buddhist mantrams. Ergonomic DX and great performance — thanks to Astro, Tailwind, and Rust (for the parser)!",
     url: {
       production: "https://mantram.blog/",
       source: "https://github.com/ndinata/mantram",
     },
-    techStack: ["Astro", "ReactJS", "TailwindCSS", "Rust"],
+    techStack: ["astro", "reactjs", "tailwindcss", "rust"],
   },
 } as const satisfies Record<string, SideProject>;

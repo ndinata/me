@@ -55,7 +55,7 @@ export function ThemeToggle() {
         <Button
           variant="ghost"
           size="icon"
-          className="-mr-2 h-8 w-8"
+          className="-mb-0.5 -mr-2 h-8 w-8"
           onClick={useCallback(() => setOpen((o) => !o), [])}
         >
           <IconSun className="h-6 w-6 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />

@@ -32,7 +32,7 @@ const LINKS = [
 ];
 ---
 
-<RootLayout title="Nico Dinata">
+<RootLayout title="Nico Dinata - Software Engineer">
   {/* Hero section. */}
   <section class="container flex flex-col gap-8 pb-12 pt-8">
     <h1
@@ -46,7 +46,7 @@ const LINKS = [
       {BIO}
     </p>
 
-    <div class="flex flex-col gap-3">
+    <div class="flex flex-col gap-3 md:flex-row md:gap-12">
       {
         LINKS.map((link) => (
           <span>
@@ -54,9 +54,9 @@ const LINKS = [
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center font-medium underline decoration-2 underline-offset-4"
+              class="inline-flex items-center font-medium underline decoration-2 underline-offset-4 md:text-lg"
             >
-              <link.Icon className="mr-2" />
+              <link.Icon className="mr-1.5" />
               {link.value}
             </a>
           </span>
@@ -66,8 +66,8 @@ const LINKS = [
   </section>
 
   {/* Past work section. */}
-  <section class="container flex flex-col gap-10 py-12">
-    <div class="flex flex-col gap-4">
+  <section class="container flex flex-col gap-12 py-12">
+    <div class="-mb-4 flex flex-col gap-4 md:-mb-0">
       <span>
         <a href="#past-work">
           <h2
@@ -78,14 +78,14 @@ const LINKS = [
           </h2>
         </a>
       </span>
-      <p class="leading-normal text-foreground/80">
+      <p class="leading-relaxed text-foreground/80 md:text-lg">
         These are some of the projects I worked on in my previous role (note:
         their contents are confidential). Feel free to <a
           href={`mailto:${PROFILE.email}`}
           class="font-medium text-foreground underline decoration-2 underline-offset-4"
           >contact me</a
-        > directly to discuss, although I may be able to share only my role and general
-        responsibilities.
+        > directly to discuss them, although I may be able to share only my role
+        and general responsibilities.
       </p>
     </div>
 
@@ -99,8 +99,8 @@ const LINKS = [
   </section>
 
   {/* Side project section. */}
-  <section class="container flex flex-col gap-10 py-12">
-    <span>
+  <section class="container flex flex-col gap-16 py-12 pb-12">
+    <span class="-mb-6">
       <a href="#side-projects">
         <h2
           id="side-projects"
