@@ -49,7 +49,7 @@ export const PAST_APPLICKABLE_WORK = {
   },
   commons: {
     name: "The Commons",
-    summary: "Premium coworking spaces and flexible offices management app.",
+    summary: "Premium coworking spaces management app.",
     externalUrl: "https://www.thecommons.com.au/",
     responsibilityType: "mobile-only",
   },
@@ -80,9 +80,9 @@ export type SideProject = {
 /** All side projects. */
 export const SIDE_PROJECT = {
   mantram: {
-    name: "📿 mantram",
+    name: "mantram 📿",
     summary:
-      "Mobile-friendly online library of Buddhist mantrams. Ergonomic DX and great performance — thanks to Astro, Tailwind, and Rust (for the parser)!",
+      "Mobile-friendly online library of Buddhist mantrams. Great performance and ergonomic DX — thanks to Astro, Tailwind, and Rust!",
     url: {
       production: "https://mantram.blog/",
       source: "https://github.com/ndinata/mantram",

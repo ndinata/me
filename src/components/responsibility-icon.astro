@@ -1,0 +1,39 @@
+---
+import {
+  IconDeviceMobile,
+  IconDevices,
+  IconServer2,
+  IconWorldWww,
+} from "@tabler/icons-react";
+
+import type { Work } from "@/config";
+
+type Props = {
+  type: Work["responsibilityType"];
+};
+
+const { type } = Astro.props;
+
+const isMobile = type === "mobile-only" || type === "mobile-full-stack";
+const isWeb = type === "web-only" || type === "web-full-stack";
+const isFrontend = type === "frontend";
+const hasBackend =
+  type === "backend" ||
+  type === "mobile-full-stack" ||
+  type === "web-full-stack" ||
+  type === "full-stack";
+---
+
+<span class="flex gap-0.5 text-foreground/80">
+  {
+    isMobile ? (
+      <IconDeviceMobile title="Mobile app" size={22} />
+    ) : isWeb ? (
+      <IconWorldWww title="Web app" />
+    ) : isFrontend ? (
+      <IconDevices title="Mobile and web app" />
+    ) : null
+  }
+
+  {hasBackend && <IconServer2 title="Backend server" size={22} />}
+</span>

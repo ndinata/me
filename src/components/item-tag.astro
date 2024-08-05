@@ -1,0 +1,20 @@
+---
+type Props = {
+  item: string | { name: string; url: string };
+};
+
+const { item } = Astro.props;
+
+const Tag = typeof item === "string" ? "div" : "a";
+const name = typeof item === "string" ? item : item.name;
+const url = typeof item === "string" ? undefined : item.url;
+---
+
+<Tag
+  href={url}
+  target="_blank"
+  rel="noopener noreferrer"
+  class="flex h-8 items-center justify-center rounded-full bg-primary/10 px-4 text-sm text-primary hover:bg-primary hover:text-primary-foreground"
+>
+  {name}
+</Tag>
