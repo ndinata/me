@@ -1,24 +1,25 @@
 ---
 import { ThemeToggle } from "@/components/theme-toggle";
+
+const atHomePage = Astro.url.pathname === "/";
+const atResumePage = Astro.url.pathname === "/resume";
 ---
 
 <header
-  class="container top-0 z-50 flex h-24 w-full max-w-5xl items-center justify-between"
+  class="container top-0 z-50 flex h-24 w-full max-w-5xl items-center justify-between print:hidden"
 >
   <a
     href="/"
-    class="font-serif text-3xl font-bold text-foreground/80 decoration-primary underline-offset-4 hover:underline"
+    class={`font-serif text-3xl font-bold text-foreground/80 decoration-primary underline-offset-4 hover:underline ${atHomePage && "underline"}`}
     >nd.</a
   >
-  <nav class="flex items-center gap-4 md:gap-8">
-    <!-- <a
-      href="/"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="font-serif text-lg underline decoration-2 underline-offset-4 md:text-xl"
+  <nav class="flex items-center gap-6 md:gap-10">
+    <a
+      href="/resume"
+      class={`font-serif text-lg tracking-tight decoration-2 underline-offset-4 hover:underline md:text-xl ${atResumePage && "font-medium underline"}`}
     >
       résumé
-    </a> -->
+    </a>
 
     <ThemeToggle client:load />
   </nav>

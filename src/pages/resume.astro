@@ -1,0 +1,31 @@
+---
+import "@fontsource-variable/inter";
+import "@fontsource-variable/lora";
+
+import "@/styles/globals.css";
+import EducationSection from "@/components/resume/education-section.astro";
+import ExperienceSection from "@/components/resume/experience-section.astro";
+import Header from "@/components/resume/header.astro";
+import SkillSection from "@/components/resume/skill-section.astro";
+import RootLayout from "@/layouts/root.astro";
+---
+
+<RootLayout title="Nico Dinata - Resume">
+  <div
+    class="container flex flex-1 flex-col gap-14 pb-8 pt-4 md:pt-8 print:gap-8 print:p-12"
+  >
+    <Header />
+    <section
+      class="flex flex-col items-start justify-between gap-14 md:flex-row print:gap-10"
+    >
+      <ExperienceSection />
+      <SkillSection />
+    </section>
+    <EducationSection />
+  </div>
+</RootLayout>
+<style>
+  body {
+    print-color-adjust: exact;
+  }
+</style>

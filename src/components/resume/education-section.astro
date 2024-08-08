@@ -1,0 +1,23 @@
+---
+import { EDUCATION } from "@/config/resume";
+---
+
+<section>
+  <h2 class="mb-3 font-serif text-2xl font-medium text-primary print:text-xl">
+    Education
+  </h2>
+  <ul class="flex flex-col gap-8 print:gap-6">
+    {
+      EDUCATION.map(({ title, from, to, institution }) => (
+        <li>
+          <p class="mb-0.5 text-lg font-semibold print:tracking-tight">
+            {title}
+          </p>
+          <p class="text-muted-foreground print:text-sm print:tracking-tight">
+            {from} - {to}, {institution}
+          </p>
+        </li>
+      ))
+    }
+  </ul>
+</section>

@@ -1,0 +1,42 @@
+---
+import { EXPERIENCE } from "@/config/resume";
+---
+
+<section class="md:flex-[0.6]">
+  <h2 class="mb-3 font-serif text-2xl font-medium text-primary print:text-xl">
+    Experience
+  </h2>
+  <ul class="flex flex-col gap-10 print:gap-8">
+    {
+      EXPERIENCE.map(
+        ({ title, from, to, institution, location, skills, content }) => (
+          <li class="flex flex-col gap-0.5 print:gap-0">
+            <p class="text-lg font-semibold print:mb-0.5 print:tracking-tight">
+              {title} @ {institution}
+            </p>
+            <p class="tracking-tight text-muted-foreground print:text-xs">
+              {from} - {to}, {location}
+            </p>
+
+            <div class="mt-2.5 flex flex-col gap-4 text-foreground/80 print:mt-2 print:text-sm print:leading-relaxed print:text-foreground">
+              {content.map((item) =>
+                typeof item === "string" ? (
+                  <p class="tracking-tight">{item}</p>
+                ) : (
+                  <div>
+                    <p class="tracking-tight">{item.body}</p>
+                    <ul class="mt-1.5 flex list-inside list-disc flex-col gap-0.5">
+                      {item.bulletPoints.map((point) => (
+                        <li class="leading-snug">{point}</li>
+                      ))}
+                    </ul>
+                  </div>
+                ),
+              )}
+            </div>
+          </li>
+        ),
+      )
+    }
+  </ul>
+</section>
