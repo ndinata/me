@@ -9,8 +9,19 @@ import { EXPERIENCE } from "@/config/resume";
   <ul class="flex flex-col gap-10 print:gap-8">
     {
       EXPERIENCE.map(
-        ({ title, from, to, institution, location, skills, content }) => (
-          <li class="flex flex-col gap-0.5 print:gap-0">
+        ({
+          title,
+          from,
+          to,
+          institution,
+          location,
+          skills,
+          content,
+          excludeFromPdf,
+        }) => (
+          <li
+            class={`flex flex-col gap-0.5 print:gap-0 ${excludeFromPdf && "print:hidden"}`}
+          >
             <p class="text-lg font-semibold print:mb-0.5 print:tracking-tight">
               {title} @ {institution}
             </p>
