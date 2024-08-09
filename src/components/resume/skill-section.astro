@@ -8,18 +8,28 @@ import { SKILLS } from "@/config/resume";
   </h2>
 
   <section class="mb-8 flex flex-col">
-    <p class="mb-0.5 text-lg font-semibold print:tracking-tight">Toolkit</p>
-    <span
-      class="text-lg leading-relaxed tracking-tight text-muted-foreground print:text-sm print:text-foreground/80"
-      >{SKILLS.technical.join(", ")}</span
+    <p
+      class="mb-0.5 text-lg font-semibold tracking-tight md:text-xl print:text-lg"
     >
+      Toolkit
+    </p>
+    <span
+      class="leading-relaxed tracking-tight text-muted-foreground md:text-lg print:text-sm print:leading-relaxed print:text-foreground/80"
+    >
+      {SKILLS.technical.join(", ")}
+    </span>
   </section>
 
   <section class="flex flex-col">
-    <p class="mb-0.5 text-lg font-semibold print:tracking-tight">Personal</p>
-    <span
-      class="text-lg leading-relaxed tracking-tight text-muted-foreground print:text-sm print:text-foreground/80"
-      >{SKILLS.personal.join(", ")}</span
+    <p
+      class="mb-0.5 text-lg font-semibold tracking-tight md:text-xl print:text-lg"
     >
+      Personal
+    </p>
+    <span
+      class="leading-relaxed tracking-tight text-muted-foreground md:text-lg print:text-sm print:leading-relaxed print:text-foreground/80"
+    >
+      {SKILLS.personal.join(", ")}
+    </span>
   </section>
 </aside>

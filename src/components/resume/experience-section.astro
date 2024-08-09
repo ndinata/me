@@ -1,12 +1,14 @@
 ---
+/* eslint-disable astro/no-set-html-directive */
+import ItemTag from "@/components/item-tag.astro";
 import { EXPERIENCE } from "@/config/resume";
 ---
 
-<section class="md:flex-[0.6]">
+<section class="md:flex-[0.6] print:flex-[0.7]">
   <h2 class="mb-3 font-serif text-2xl font-medium text-primary print:text-xl">
     Experience
   </h2>
-  <ul class="flex flex-col gap-10 print:gap-8">
+  <ul class="flex flex-col gap-12 print:gap-8">
     {
       EXPERIENCE.map(
         ({
@@ -20,25 +22,31 @@ import { EXPERIENCE } from "@/config/resume";
           excludeFromPdf,
         }) => (
           <li
-            class={`flex flex-col gap-0.5 print:gap-0 ${excludeFromPdf && "print:hidden"}`}
+            class={`flex flex-col gap-1 print:gap-0 ${excludeFromPdf && "print:hidden"}`}
           >
-            <p class="text-lg font-semibold print:mb-0.5 print:tracking-tight">
+            <p class="text-xl font-semibold tracking-tight print:mb-0.5 print:text-base">
               {title} @ {institution}
             </p>
             <p class="tracking-tight text-muted-foreground print:text-xs">
               {from} - {to}, {location}
             </p>
 
-            <div class="mt-2.5 flex flex-col gap-4 text-foreground/80 print:mt-2 print:text-sm print:leading-relaxed print:text-foreground">
+            <div class="mt-2.5 flex flex-wrap gap-1 print:hidden">
+              {skills.map((skill) => (
+                <ItemTag item={skill} />
+              ))}
+            </div>
+
+            <div class="mt-2.5 flex flex-col gap-4 leading-relaxed tracking-tight text-muted-foreground print:mt-2 print:text-sm print:leading-normal print:text-foreground/80">
               {content.map((item) =>
                 typeof item === "string" ? (
-                  <p class="tracking-tight">{item}</p>
+                  <p set:html={item} />
                 ) : (
                   <div>
-                    <p class="tracking-tight">{item.body}</p>
-                    <ul class="mt-1.5 flex list-inside list-disc flex-col gap-0.5">
+                    <p set:html={item.body} />
+                    <ul class="ml-[1.5ch] mt-2 flex list-outside list-disc flex-col gap-1.5 print:ml-[2ch] print:gap-1">
                       {item.bulletPoints.map((point) => (
-                        <li class="leading-snug">{point}</li>
+                        <li set:html={point} />
                       ))}
                     </ul>
                   </div>

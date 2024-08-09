@@ -1,0 +1,20 @@
+---
+import { IconDownload } from "@tabler/icons-react";
+
+import { buttonVariants } from "@/components/ui/button";
+
+type Props = {
+  className?: string;
+};
+
+const { className } = Astro.props;
+---
+
+<a
+  href="/nico-dinata-resume.pdf"
+  target="_blank"
+  rel="noopener noreferrer"
+  class={`${buttonVariants({ variant: "secondary" })} ${className}`}
+>
+  <IconDownload size={18} className="mr-2" />Save as PDF
+</a>

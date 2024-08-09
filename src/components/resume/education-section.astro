@@ -10,10 +10,10 @@ import { EDUCATION } from "@/config/resume";
     {
       EDUCATION.map(({ title, from, to, institution, excludeFromPdf }) => (
         <li class={`${excludeFromPdf && "print:hidden"}`}>
-          <p class="mb-0.5 text-lg font-semibold print:tracking-tight">
+          <p class="mb-1 text-lg font-medium tracking-tight md:text-xl print:mb-0.5 print:text-base">
             {title}
           </p>
-          <p class="text-muted-foreground print:text-sm print:tracking-tight">
+          <p class="tracking-tight text-muted-foreground print:text-sm">
             {from} - {to}, {institution}
           </p>
         </li>

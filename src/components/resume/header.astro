@@ -1,7 +1,7 @@
 ---
-import { IconDownload, IconSend, IconWorldWww } from "@tabler/icons-react";
+import { IconSend, IconWorldWww } from "@tabler/icons-react";
 
-import { buttonVariants } from "@/components/ui/button";
+import SavePdfButton from "@/components/resume/save-pdf-button.astro";
 import { HEADER } from "@/config/resume";
 
 const HeaderLinks = HEADER.links.map((link) => ({
@@ -17,14 +17,7 @@ const HeaderLinks = HEADER.links.map((link) => ({
 <header
   class="flex flex-col gap-8 md:flex-row md:justify-between md:gap-14 print:items-center print:gap-10"
 >
-  <a
-    href="/resume.pdf"
-    target="_blank"
-    rel="noopener noreferrer"
-    class={`${buttonVariants({ variant: "secondary" })} self-stretch md:hidden print:hidden`}
-  >
-    <IconDownload size={18} className="mr-2" />Save as PDF
-  </a>
+  <SavePdfButton className="self-stretch md:hidden print:hidden" />
 
   <div class="flex flex-col gap-2 md:flex-[0.6] print:gap-1.5">
     <h1 class="font-serif text-5xl font-bold tracking-tight print:text-5xl">
@@ -36,38 +29,35 @@ const HeaderLinks = HEADER.links.map((link) => ({
     <div class="hidden gap-12 md:mt-6 md:inline-flex print:hidden">
       {
         HeaderLinks.map(({ url, label, Icon }) => (
-          <a
-            href={url}
-            class="inline-flex items-center text-lg font-medium tracking-tight underline decoration-2 underline-offset-4"
-          >
-            {Icon && <Icon className="mr-2" />}
-            {label}
-          </a>
+          <span>
+            <a
+              href={url}
+              class="inline-flex items-center text-lg font-medium tracking-tight underline decoration-2 underline-offset-4"
+            >
+              {Icon && <Icon className="mr-2" />}
+              {label}
+            </a>
+          </span>
         ))
       }
     </div>
   </div>
 
   <section class="flex flex-col gap-6 md:flex-[0.3] print:gap-2">
-    <a
-      href="/resume.pdf"
-      target="_blank"
-      rel="noopener noreferrer"
-      class={`${buttonVariants({ variant: "secondary" })} hidden md:inline-flex print:hidden`}
-    >
-      <IconDownload size={18} className="mr-2" />Save as PDF
-    </a>
+    <SavePdfButton className="hidden md:inline-flex print:hidden" />
 
-    <div class="flex flex-col gap-4 md:hidden print:flex print:gap-1.5">
+    <div class="flex flex-col gap-3 md:hidden print:flex print:gap-1.5">
       {
         HeaderLinks.map(({ url, label, Icon }) => (
-          <a
-            href={url}
-            class="inline-flex items-center font-medium underline decoration-2 underline-offset-4 md:text-lg md:tracking-tight print:text-base print:text-muted-foreground print:no-underline"
-          >
-            {Icon && <Icon className="mr-2.5 print:hidden" />}
-            {label}
-          </a>
+          <span>
+            <a
+              href={url}
+              class="inline-flex items-center font-medium underline decoration-2 underline-offset-4 md:text-lg md:tracking-tight print:text-base print:text-muted-foreground print:no-underline"
+            >
+              {Icon && <Icon className="mr-2.5 print:hidden" />}
+              {label}
+            </a>
+          </span>
         ))
       }
     </div>
