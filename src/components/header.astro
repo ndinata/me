@@ -2,7 +2,7 @@
 import { ThemeToggle } from "@/components/theme-toggle";
 
 const atHomePage = Astro.url.pathname === "/";
-const atResumePage = Astro.url.pathname === "/resume";
+const atResumePage = Astro.url.pathname === "/resume/";
 ---
 
 <header
@@ -16,7 +16,7 @@ const atResumePage = Astro.url.pathname === "/resume";
   <nav class="flex items-center gap-6 md:gap-10">
     <a
       href="/resume"
-      class={`font-serif text-lg tracking-tight decoration-2 underline-offset-4 hover:underline md:text-xl ${atResumePage && "font-medium underline"}`}
+      class={`font-serif text-lg tracking-tight decoration-2 underline-offset-4 hover:font-medium hover:underline md:text-xl ${atResumePage && "font-medium underline"}`}
     >
       résumé
     </a>
