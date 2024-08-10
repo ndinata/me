@@ -16,7 +16,7 @@ export const EXPERIENCE: Experience = [
     skills: ["React Native", "ReactJS", "NextJS", "Swift", "Java", "Flask"],
     content: [
       {
-        body: `Responsible for ${semibold("end-to-end product implementation")} for all projects across Applickable's client portfolio, working with ${semibold("React Native and NextJS")} on the frontend and ${semibold("Flask")} on the backend.`,
+        body: `Responsible for ${semibold("end-to-end product implementation")} for projects across Applickable's client portfolio, working with ${semibold("React Native and NextJS")} on the frontend and ${semibold("Flask")} on the backend.`,
         bulletPoints: [
           `${semibold("Collaborated with clients and designers")} to do ${semibold("feature scoping and prioritisation")}.`,
           `Utilised technical best practices to ensure great UX, ranging from ${semibold("optimising network calls")} to ${semibold("fine-tuning render performance")}.`,
@@ -53,19 +53,21 @@ export const EXPERIENCE: Experience = [
 
 export const SKILLS: Skills = {
   technical: [
-    "Expo/React Native",
+    "React Native/Expo",
     "Swift & Java native modules",
     "ReactJS",
     "NextJS",
+    "TypeScript",
     "Astro",
     "TailwindCSS",
-    "Typescript",
     "Flask (Python)",
+    "PostgreSQL",
   ],
-  personal: [
-    "Project management",
-    "internal documentation",
+  development: [
+    "Project management (Agile)",
+    "documentation building",
     "client communication",
+    "design-friendly development",
   ],
 };
 
@@ -109,7 +111,7 @@ type Experience = {
 
 type Skills = {
   technical: string[];
-  personal: string[];
+  development: string[];
 };
 
 type Education = {
