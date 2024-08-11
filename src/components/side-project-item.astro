@@ -3,6 +3,7 @@ import { IconCode } from "@tabler/icons-react";
 
 import ItemTag from "@/components/item-tag.astro";
 import { type SideProject } from "@/config/site";
+import { cn } from "@/styles/utils";
 
 type Props = SideProject;
 
@@ -24,9 +25,13 @@ const Name = productionUrl ? "a" : "h4";
       href={productionUrl}
       target="_blank"
       rel="noopener noreferrer"
-      class={`decoration-2 underline-offset-4 ${productionUrl ? "underline" : ""}`}
-      >{name}</Name
+      class={cn(
+        "decoration-2 underline-offset-4",
+        productionUrl && "underline",
+      )}
     >
+      {name}
+    </Name>
     {
       !!sourceUrl && (
         <a

@@ -3,6 +3,7 @@ import { IconArrowUpRight } from "@tabler/icons-react";
 
 import ResponsibilityIcon from "@/components/responsibility-icon.astro";
 import { type Work } from "@/config/site";
+import { cn } from "@/styles/utils";
 
 type Props = Work;
 
@@ -17,16 +18,21 @@ const Name = externalUrl ? "a" : "h4";
       href={externalUrl}
       target="_blank"
       rel="noopener noreferrer"
-      class={`inline-flex items-center font-serif text-2xl font-medium decoration-2 underline-offset-4 ${externalUrl ? "underline" : ""}`}
-      >{name}{
+      class={cn(
+        "inline-flex items-center font-serif text-2xl font-medium decoration-2 underline-offset-4",
+        externalUrl && "underline",
+      )}
+    >
+      {name}
+      {
         externalUrl && (
           <IconArrowUpRight
             size={20}
             className="ml-1 flex-shrink-0 text-foreground/80"
           />
         )
-      }</Name
-    >
+      }
+    </Name>
     <ResponsibilityIcon type={responsibilityType} />
   </span>
 

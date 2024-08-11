@@ -1,5 +1,6 @@
 ---
 import { EDUCATION } from "@/config/resume";
+import { cn } from "@/styles/utils";
 ---
 
 <section>
@@ -9,7 +10,7 @@ import { EDUCATION } from "@/config/resume";
   <ul class="flex flex-col gap-8 print:gap-6">
     {
       EDUCATION.map(({ title, from, to, institution, excludeFromPdf }) => (
-        <li class={`${excludeFromPdf && "print:hidden"}`}>
+        <li class={cn(excludeFromPdf && "print:hidden")}>
           <p class="mb-1 text-lg font-medium tracking-tight md:text-xl print:mb-0.5 print:text-base">
             {title}
           </p>

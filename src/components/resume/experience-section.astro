@@ -2,6 +2,7 @@
 /* eslint-disable astro/no-set-html-directive */
 import ItemTag from "@/components/item-tag.astro";
 import { EXPERIENCE } from "@/config/resume";
+import { cn } from "@/styles/utils";
 ---
 
 <section class="md:flex-[0.6] print:flex-[0.7]">
@@ -22,7 +23,10 @@ import { EXPERIENCE } from "@/config/resume";
           excludeFromPdf,
         }) => (
           <li
-            class={`flex flex-col gap-1 print:gap-0 ${excludeFromPdf && "print:hidden"}`}
+            class={cn(
+              "flex flex-col gap-1 print:gap-0",
+              excludeFromPdf && "print:hidden",
+            )}
           >
             <p class="text-xl font-semibold tracking-tight print:mb-0.5 print:text-base">
               {title} @ {institution}
