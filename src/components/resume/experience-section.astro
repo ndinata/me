@@ -44,7 +44,7 @@ import { EXPERIENCE } from "@/config/resume";
                 ) : (
                   <div>
                     <p set:html={item.body} />
-                    <ul class="ml-[1.5ch] mt-2 flex list-outside list-disc flex-col gap-1.5 print:ml-[2ch] print:gap-1">
+                    <ul class="mt-2 flex list-outside list-disc flex-col gap-1.5 pl-[18px] print:gap-1 print:pl-[2ch]">
                       {item.bulletPoints.map((point) => (
                         <li set:html={point} />
                       ))}

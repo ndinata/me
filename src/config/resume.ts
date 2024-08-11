@@ -1,5 +1,5 @@
 export const HEADER: Header = {
-  summary: "User-focused Software Engineer",
+  summary: "User-centric Software Engineer",
   links: [
     { label: "nicodnt@icloud.com", url: "mailto:nicodnt@icloud.com" },
     { label: "https://nicodinata.dev", url: "https://nicodinata.dev" },
@@ -19,7 +19,7 @@ export const EXPERIENCE: Experience = [
         body: `Responsible for ${semibold("end-to-end product implementation")} for projects across Applickable's client portfolio, working with ${semibold("React Native and NextJS")} on the frontend and ${semibold("Flask")} on the backend.`,
         bulletPoints: [
           `${semibold("Collaborated with clients and designers")} to do ${semibold("feature scoping and prioritisation")}.`,
-          `Utilised technical best practices to ensure great UX, ranging from ${semibold("optimising network calls")} to ${semibold("fine-tuning render performance")}.`,
+          `Utilised technical best practices to ensure great product UX, ranging from ${semibold("optimising network calls")} to ${semibold("fine-tuning render performance")}.`,
           `${semibold("Streamlined and maintained development pipelines")} to improve team velocity.`,
           `${semibold("Maintained internal documentation and KBs")} to increase team productivity and scalability.`,
           `Helped ${semibold("onboard new engineers")} and perform ${semibold("task allocation and review")}.`,
@@ -67,7 +67,7 @@ export const SKILLS: Skills = {
     "Project management (Agile)",
     "documentation building",
     "client communication",
-    "design-friendly development",
+    "familiarity with design processes and tools",
   ],
 };
 
