@@ -31,7 +31,7 @@ export type Work = {
 export const PAST_APPLICKABLE_WORK = {
   assemble: {
     name: "Assemble",
-    summary: "Mobile app for centralised home/property management.",
+    summary: "Mobile app for centralised home/facilities management.",
     externalUrl: "https://assemble.com.au/",
     responsibilityType: "mobile-full-stack",
   },
@@ -87,6 +87,6 @@ export const SIDE_PROJECT = {
       production: "https://mantram.blog/",
       source: "https://github.com/ndinata/mantram",
     },
-    techStack: ["astro", "reactjs", "tailwindcss", "rust"],
+    techStack: ["Astro", "ReactJS", "TailwindCSS", "Rust"],
   },
 } as const satisfies Record<string, SideProject>;
