@@ -1,10 +1,19 @@
-/** Profile links etc. */
+/** Profile config. */
 export const PROFILE = {
   email: "nicodnt@icloud.com",
-  github: { username: "ndinata", url: "https://github.com/ndinata/" },
-  linkedin: {
-    username: "nicodinata",
-    url: "https://www.linkedin.com/in/nicodinata/",
+  work: {
+    position: "pondering code",
+    company: {
+      name: "Sleeping Duck 🦆",
+      url: "https://www.sleepingduck.com/au/",
+    },
+  },
+  links: {
+    github: { username: "ndinata", url: "https://github.com/ndinata/" },
+    linkedin: {
+      username: "nicodinata",
+      url: "https://www.linkedin.com/in/nicodinata/",
+    },
   },
 } as const;
 

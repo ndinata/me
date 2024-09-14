@@ -21,13 +21,13 @@ const LINKS = [
   },
   {
     Icon: IconBrandLinkedin,
-    url: PROFILE.linkedin.url,
-    value: PROFILE.linkedin.username,
+    url: PROFILE.links.linkedin.url,
+    value: PROFILE.links.linkedin.username,
   },
   {
     Icon: IconBrandGithub,
-    url: PROFILE.github.url,
-    value: PROFILE.github.username,
+    url: PROFILE.links.github.url,
+    value: PROFILE.links.github.username,
   },
 ];
 ---
@@ -42,9 +42,21 @@ const LINKS = [
         >software engineer.</span
       >
     </h1>
-    <p class="text-xl leading-normal tracking-tight text-foreground/80">
+    <p class="text-xl tracking-tight text-foreground/80">
       {BIO}
     </p>
+
+    <span class="text-lg leading-normal tracking-tight">
+      Currently {PROFILE.work.position} at
+      <a
+        href={PROFILE.work.company.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex font-semibold leading-relaxed"
+      >
+        {PROFILE.work.company.name}
+      </a>.
+    </span>
 
     <div class="flex flex-col gap-3 md:flex-row md:gap-12">
       {

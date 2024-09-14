@@ -9,25 +9,37 @@ const ASTRO_URL = "https://astro.build/";
 >
   <div class="text-sm tracking-tight text-muted-foreground md:text-base">
     <span>© Nico Dinata {SITE.year}.</span>
-    <span class="ml-1"
-      >Built with <a
+    <span class="ml-1">
+      Built with{" "}
+      <a
         href={ASTRO_URL}
         target="_blank"
         rel="noopener noreferrer"
-        class="font-medium text-foreground/80">Astro</a
-      > and ❤️.</span
-    >
+        class="font-medium text-foreground/80"
+      >
+        Astro
+      </a>
+      {" "}and ❤️.
+    </span>
   </div>
 
   <div
     class="flex items-center gap-9 text-lg underline decoration-primary/50 decoration-2 underline-offset-[6px]"
   >
     <a href={`mailto:${PROFILE.email}`}>email</a>
-    <a href={PROFILE.linkedin.url} target="_blank" rel="noopener noreferrer"
-      >linkedin</a
+    <a
+      href={PROFILE.links.linkedin.url}
+      target="_blank"
+      rel="noopener noreferrer"
     >
-    <a href={PROFILE.github.url} target="_blank" rel="noopener noreferrer"
-      >github</a
+      linkedin
+    </a>
+    <a
+      href={PROFILE.links.github.url}
+      target="_blank"
+      rel="noopener noreferrer"
     >
+      github
+    </a>
   </div>
 </footer>
